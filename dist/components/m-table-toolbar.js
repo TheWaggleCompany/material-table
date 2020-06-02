@@ -188,10 +188,11 @@ var MTableToolbar = /*#__PURE__*/function (_React$Component) {
         className: classes.searchBy
       }, this.props.searchByOptions && this.props.searchByOptions.length ? this.props.searchByOptions.map(function (option) {
         /*#__PURE__*/
-        React.createElement(_MenuItem["default"], {
-          key: option,
+        React.createElement("li", {
+          key: option
+        }, /*#__PURE__*/React.createElement(_MenuItem["default"], {
           value: option
-        }, option);
+        }, option));
       }) : null);
     }
   }, {
