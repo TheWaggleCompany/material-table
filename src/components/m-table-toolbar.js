@@ -117,6 +117,8 @@ export class MTableToolbar extends React.Component {
   }
 
   renderSearchBy() {
+    const { classes } = this.props;
+    
     return (
       <TextField
           select
