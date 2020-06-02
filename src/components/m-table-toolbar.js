@@ -124,6 +124,7 @@ export class MTableToolbar extends React.Component {
           variant="filled"
           value={this.state.searchBy}
           onChange={event => this.onSearchByChange(event.target.value, this.state.searchText)}
+          className={ classes.searchBy }
       >
         {this.props.searchByOptions && this.props.searchByOptions.length
           ? this.props.searchByOptions.map(option => {
@@ -351,6 +352,10 @@ export const styles = theme => ({
   },
   title: {
     overflow: 'hidden'
+  },
+  searchBy: {
+    minWidth: 150,
+    paddingLeft: theme.spacing(2)
   },
   searchField: {
     minWidth: 150,

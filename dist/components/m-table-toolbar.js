@@ -183,7 +183,8 @@ var MTableToolbar = /*#__PURE__*/function (_React$Component) {
         value: this.state.searchBy,
         onChange: function onChange(event) {
           return _this3.onSearchByChange(event.target.value, _this3.state.searchText);
-        }
+        },
+        className: classes.searchBy
       }, this.props.searchByOptions && this.props.searchByOptions.length ? this.props.searchByOptions.map(function (option) {
         /*#__PURE__*/
         React.createElement(_MenuItem["default"], {
@@ -397,6 +398,10 @@ var styles = function styles(theme) {
     },
     title: {
       overflow: 'hidden'
+    },
+    searchBy: {
+      minWidth: 150,
+      paddingLeft: theme.spacing(2)
     },
     searchField: {
       minWidth: 150,
