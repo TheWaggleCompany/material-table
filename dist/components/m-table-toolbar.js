@@ -176,6 +176,7 @@ var MTableToolbar = /*#__PURE__*/function (_React$Component) {
     value: function renderSearchBy() {
       var _this3 = this;
 
+      var classes = this.props.classes;
       return /*#__PURE__*/React.createElement(_TextField["default"], {
         select: true,
         label: "Search by: ".concat(this.state.searchBy),
