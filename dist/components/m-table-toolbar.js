@@ -33,6 +33,12 @@ var _IconButton = _interopRequireDefault(require("@material-ui/core/IconButton")
 
 var _InputAdornment = _interopRequireDefault(require("@material-ui/core/InputAdornment"));
 
+var _Select = _interopRequireDefault(require("@material-ui/core/Select"));
+
+var _InputLabel = _interopRequireDefault(require("@material-ui/core/InputLabel"));
+
+var _FormControl = _interopRequireDefault(require("@material-ui/core/FormControl"));
+
 var _Menu = _interopRequireDefault(require("@material-ui/core/Menu"));
 
 var _MenuItem = _interopRequireDefault(require("@material-ui/core/MenuItem"));
@@ -56,8 +62,6 @@ var _filefy = require("filefy");
 var _propTypes = _interopRequireWildcard(require("prop-types"));
 
 var React = _interopRequireWildcard(require("react"));
-
-var _core = require("@material-ui/core");
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
@@ -179,9 +183,9 @@ var MTableToolbar = /*#__PURE__*/function (_React$Component) {
       var _this3 = this;
 
       var classes = this.props.classes;
-      return /*#__PURE__*/React.createElement(_core.FormControl, null, /*#__PURE__*/React.createElement(InputLabel, {
+      return /*#__PURE__*/React.createElement(_FormControl["default"], null, /*#__PURE__*/React.createElement(_InputLabel["default"], {
         id: "search-by-label"
-      }, "Search by: ".concat(this.state.searchBy)), /*#__PURE__*/React.createElement(Select, {
+      }, "Search by: ".concat(this.state.searchBy)), /*#__PURE__*/React.createElement(_Select["default"], {
         labelId: "search-by-label",
         variant: "filled",
         value: this.state.searchBy,
