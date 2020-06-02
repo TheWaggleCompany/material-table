@@ -186,14 +186,13 @@ var MTableToolbar = /*#__PURE__*/function (_React$Component) {
           return _this3.onSearchByChange(event.target.value, _this3.state.searchText);
         },
         className: classes.searchBy
-      }, this.props.searchByOptions && this.props.searchByOptions.length ? this.props.searchByOptions.map(function (option) {
+      }, this.props.searchByOptions && this.props.searchByOptions.map(function (option) {
         /*#__PURE__*/
-        React.createElement("li", {
-          key: option
-        }, /*#__PURE__*/React.createElement(_MenuItem["default"], {
+        React.createElement(_MenuItem["default"], {
+          key: option,
           value: option
-        }, option));
-      }) : null);
+        }, option);
+      }));
     }
   }, {
     key: "renderDefaultActions",

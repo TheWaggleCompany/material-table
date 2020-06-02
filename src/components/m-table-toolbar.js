@@ -121,22 +121,20 @@ export class MTableToolbar extends React.Component {
 
     return (
       <TextField
-        select
-        label={`Search by: ${this.state.searchBy}`}
-        variant="filled"
-        value={this.state.searchBy}
-        onChange={event => this.onSearchByChange(event.target.value, this.state.searchText)}
-        className={ classes.searchBy }
+          select
+          label={`Search by: ${this.state.searchBy}`}
+          variant="filled"
+          value={this.state.searchBy}
+          onChange={event => this.onSearchByChange(event.target.value, this.state.searchText)}
+          className={ classes.searchBy }
       >
-        {this.props.searchByOptions && this.props.searchByOptions.length
-          ? this.props.searchByOptions.map(option => {
-            <li key={option}>
-              <MenuItem value={option}>
-                {option}
-              </MenuItem>
-            </li>;
-            })
-          : null}
+        {this.props.searchByOptions && 
+          this.props.searchByOptions.map((option) => {
+            <MenuItem key={option} value={option}>
+              {option}
+            </MenuItem>;
+          })
+        }
       </TextField>
     );
   }
