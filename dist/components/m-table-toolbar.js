@@ -57,6 +57,8 @@ var _propTypes = _interopRequireWildcard(require("prop-types"));
 
 var React = _interopRequireWildcard(require("react"));
 
+var _core = require("@material-ui/core");
+
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
@@ -177,9 +179,10 @@ var MTableToolbar = /*#__PURE__*/function (_React$Component) {
       var _this3 = this;
 
       var classes = this.props.classes;
-      return /*#__PURE__*/React.createElement(_TextField["default"], {
-        select: true,
-        label: "Search by: ".concat(this.state.searchBy),
+      return /*#__PURE__*/React.createElement(_core.FormControl, null, /*#__PURE__*/React.createElement(InputLabel, {
+        id: "search-by-label"
+      }, "Search by: ".concat(this.state.searchBy)), /*#__PURE__*/React.createElement(Select, {
+        labelId: "search-by-label",
         variant: "filled",
         value: this.state.searchBy,
         onChange: function onChange(event) {
@@ -192,7 +195,7 @@ var MTableToolbar = /*#__PURE__*/function (_React$Component) {
           key: option,
           value: option
         }, option);
-      }));
+      })));
     }
   }, {
     key: "renderDefaultActions",

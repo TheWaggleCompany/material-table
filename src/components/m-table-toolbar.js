@@ -15,6 +15,7 @@ import classNames from 'classnames';
 import { CsvBuilder } from 'filefy';
 import PropTypes, { oneOf } from 'prop-types';
 import * as React from 'react';
+import { FormControl } from '@material-ui/core';
 /* eslint-enable no-unused-vars */
 
 export class MTableToolbar extends React.Component {
@@ -120,22 +121,24 @@ export class MTableToolbar extends React.Component {
     const { classes } = this.props;
 
     return (
-      <TextField
-          select
-          label={`Search by: ${this.state.searchBy}`}
+      <FormControl>
+        <InputLabel id="search-by-label">{`Search by: ${this.state.searchBy}`}</InputLabel>
+        <Select
+          labelId="search-by-label"
           variant="filled"
           value={this.state.searchBy}
           onChange={event => this.onSearchByChange(event.target.value, this.state.searchText)}
           className={ classes.searchBy }
-      >
-        {this.props.searchByOptions && 
-          this.props.searchByOptions.map((option) => {
-            <MenuItem key={option} value={option}>
-              {option}
-            </MenuItem>;
-          })
-        }
-      </TextField>
+        >
+          {this.props.searchByOptions && 
+            this.props.searchByOptions.map((option) => {
+              <MenuItem key={option} value={option}>
+                {option}
+              </MenuItem>;
+            })
+          }
+        </Select>
+      </FormControl>
     );
   }
 
