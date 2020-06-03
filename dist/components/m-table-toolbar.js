@@ -35,6 +35,8 @@ var _Menu = _interopRequireDefault(require("@material-ui/core/Menu"));
 
 var _MenuItem = _interopRequireDefault(require("@material-ui/core/MenuItem"));
 
+var _ListItemText = _interopRequireDefault(require("@material-ui/core/ListItemText"));
+
 var _TextField = _interopRequireDefault(require("@material-ui/core/TextField"));
 
 var _Toolbar = _interopRequireDefault(require("@material-ui/core/Toolbar"));
@@ -189,7 +191,7 @@ var MTableToolbar = /*#__PURE__*/function (_React$Component) {
         React.createElement(_MenuItem["default"], {
           key: option,
           value: option
-        }, /*#__PURE__*/React.createElement(ListItemText, {
+        }, /*#__PURE__*/React.createElement(_ListItemText["default"], {
           primary: option
         }));
       }));
