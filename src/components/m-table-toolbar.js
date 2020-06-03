@@ -4,6 +4,7 @@ import IconButton from '@material-ui/core/IconButton';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import ListItemText from '@material-ui/core/ListItemText';
 import TextField from '@material-ui/core/TextField';
 import Toolbar from '@material-ui/core/Toolbar';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -123,12 +124,13 @@ export class MTableToolbar extends React.Component {
         select
         variant="filled"
         value={this.state.searchBy}
+        placeholder={this.state.searchBy ? `Search by: ${this.state.searchBy}`: 'Search by'}
         onChange={event => this.onSearchByChange(event.target.value, this.state.searchText)}
-        className={ classes.searchBy }
+        className={classes.searchBy}
       >
         {this.props.searchByOptions.map((option) => {
             <MenuItem key={option} value={option}>
-              {option}
+              <ListItemText primary={option} />
             </MenuItem>;
           })}
       </TextField>
