@@ -181,19 +181,24 @@ var MTableToolbar = /*#__PURE__*/function (_React$Component) {
         select: true,
         variant: "filled",
         value: this.state.searchBy,
-        placeholder: this.state.searchBy ? "Search by: ".concat(this.state.searchBy) : 'Search by',
+        label: !this.state.searchBy ? 'Search by' : null,
         onChange: function onChange(event) {
           return _this3.onSearchByChange(event.target.value, _this3.state.searchText);
         },
-        className: classes.searchBy
-      }, this.props.searchByOptions.map(function (option) {
-        /*#__PURE__*/
-        React.createElement(_MenuItem["default"], {
+        className: classes.searchBy,
+        InputLabelProps: {
+          shrink: false
+        },
+        SelectProps: {
+          renderValue: function renderValue() {
+            return "Search By: ".concat(_this3.state.searchBy);
+          }
+        }
+      }, this.props.searchByOptions && this.props.searchByOptions.map(function (option) {
+        return /*#__PURE__*/React.createElement(_MenuItem["default"], {
           key: option,
           value: option
-        }, /*#__PURE__*/React.createElement(_ListItemText["default"], {
-          primary: option
-        }));
+        }, option);
       }));
     }
   }, {
@@ -404,7 +409,10 @@ var styles = function styles(theme) {
     },
     searchBy: {
       minWidth: 150,
-      paddingLeft: theme.spacing(2)
+      paddingLeft: theme.spacing(2),
+      '& label': {
+        transform: 'translate(28px, 14px) scale(1)'
+      }
     },
     searchField: {
       minWidth: 150,
