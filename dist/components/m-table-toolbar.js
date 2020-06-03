@@ -27,17 +27,9 @@ var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/de
 
 var _Checkbox = _interopRequireDefault(require("@material-ui/core/Checkbox"));
 
-var _FormControlLabel = _interopRequireDefault(require("@material-ui/core/FormControlLabel"));
-
 var _IconButton = _interopRequireDefault(require("@material-ui/core/IconButton"));
 
 var _InputAdornment = _interopRequireDefault(require("@material-ui/core/InputAdornment"));
-
-var _Select = _interopRequireDefault(require("@material-ui/core/Select"));
-
-var _InputLabel = _interopRequireDefault(require("@material-ui/core/InputLabel"));
-
-var _FormControl = _interopRequireDefault(require("@material-ui/core/FormControl"));
 
 var _Menu = _interopRequireDefault(require("@material-ui/core/Menu"));
 
@@ -183,23 +175,21 @@ var MTableToolbar = /*#__PURE__*/function (_React$Component) {
       var _this3 = this;
 
       var classes = this.props.classes;
-      return /*#__PURE__*/React.createElement(_FormControl["default"], null, /*#__PURE__*/React.createElement(_InputLabel["default"], {
-        id: "search-by-label"
-      }, "Search by: ".concat(this.state.searchBy)), /*#__PURE__*/React.createElement(_Select["default"], {
-        labelId: "search-by-label",
+      return /*#__PURE__*/React.createElement(_TextField["default"], {
+        select: true,
         variant: "filled",
         value: this.state.searchBy,
         onChange: function onChange(event) {
           return _this3.onSearchByChange(event.target.value, _this3.state.searchText);
         },
         className: classes.searchBy
-      }, this.props.searchByOptions && this.props.searchByOptions.map(function (option) {
+      }, this.props.searchByOptions.map(function (option) {
         /*#__PURE__*/
         React.createElement(_MenuItem["default"], {
           key: option,
           value: option
         }, option);
-      })));
+      }));
     }
   }, {
     key: "renderDefaultActions",

@@ -1,11 +1,7 @@
 /* eslint-disable no-unused-vars */
 import Checkbox from '@material-ui/core/Checkbox';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import IconButton from '@material-ui/core/IconButton';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import Select from '@material-ui/core/Select';
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
@@ -123,24 +119,19 @@ export class MTableToolbar extends React.Component {
     const { classes } = this.props;
 
     return (
-      <FormControl>
-        <InputLabel id="search-by-label">{`Search by: ${this.state.searchBy}`}</InputLabel>
-        <Select
-          labelId="search-by-label"
-          variant="filled"
-          value={this.state.searchBy}
-          onChange={event => this.onSearchByChange(event.target.value, this.state.searchText)}
-          className={ classes.searchBy }
-        >
-          {this.props.searchByOptions && 
-            this.props.searchByOptions.map((option) => {
-              <MenuItem key={option} value={option}>
-                {option}
-              </MenuItem>;
-            })
-          }
-        </Select>
-      </FormControl>
+      <TextField
+        select
+        variant="filled"
+        value={this.state.searchBy}
+        onChange={event => this.onSearchByChange(event.target.value, this.state.searchText)}
+        className={ classes.searchBy }
+      >
+        {this.props.searchByOptions.map((option) => {
+            <MenuItem key={option} value={option}>
+              {option}
+            </MenuItem>;
+          })}
+      </TextField>
     );
   }
 
