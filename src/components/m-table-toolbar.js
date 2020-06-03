@@ -124,15 +124,17 @@ export class MTableToolbar extends React.Component {
         select
         variant="filled"
         value={this.state.searchBy}
-        placeholder={this.state.searchBy ? `Search by: ${this.state.searchBy}`: 'Search by'}
+        label={!this.state.searchBy ? 'Search by' : null}
         onChange={event => this.onSearchByChange(event.target.value, this.state.searchText)}
         className={classes.searchBy}
+        InputLabelProps={{ shrink: false }}
+        SelectProps={{renderValue: () => `Search By: ${this.state.searchBy}`}}
       >
-        {this.props.searchByOptions.map((option) => {
+        {this.props.searchByOptions && this.props.searchByOptions.map((option) => (
             <MenuItem key={option} value={option}>
-              <ListItemText primary={option} />
-            </MenuItem>;
-          })}
+              {option}
+            </MenuItem>
+          ))}
       </TextField>
     );
   }
@@ -355,7 +357,10 @@ export const styles = theme => ({
   },
   searchBy: {
     minWidth: 150,
-    paddingLeft: theme.spacing(2)
+    paddingLeft: theme.spacing(2),
+    '& label': {
+      transform: 'translate(28px, 14px) scale(1)'
+    }
   },
   searchField: {
     minWidth: 150,
