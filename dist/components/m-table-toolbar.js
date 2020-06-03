@@ -179,6 +179,7 @@ var MTableToolbar = /*#__PURE__*/function (_React$Component) {
         select: true,
         variant: "filled",
         value: this.state.searchBy,
+        placeholder: this.state.searchBy ? "Search by: ".concat(this.state.searchBy) : 'Search by',
         onChange: function onChange(event) {
           return _this3.onSearchByChange(event.target.value, _this3.state.searchText);
         },
@@ -188,7 +189,9 @@ var MTableToolbar = /*#__PURE__*/function (_React$Component) {
         React.createElement(_MenuItem["default"], {
           key: option,
           value: option
-        }, option);
+        }, /*#__PURE__*/React.createElement(ListItemText, {
+          primary: option
+        }));
       }));
     }
   }, {
