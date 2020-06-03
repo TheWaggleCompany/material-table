@@ -191,7 +191,7 @@ var MTableToolbar = /*#__PURE__*/function (_React$Component) {
         },
         SelectProps: {
           renderValue: function renderValue() {
-            return "Search By: ".concat(_this3.state.searchBy);
+            return "Search by: ".concat(_this3.state.searchBy);
           }
         }
       }, this.props.searchByOptions && this.props.searchByOptions.map(function (option) {

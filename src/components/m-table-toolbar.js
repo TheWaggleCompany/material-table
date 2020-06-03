@@ -128,7 +128,7 @@ export class MTableToolbar extends React.Component {
         onChange={event => this.onSearchByChange(event.target.value, this.state.searchText)}
         className={classes.searchBy}
         InputLabelProps={{ shrink: false }}
-        SelectProps={{renderValue: () => `Search By: ${this.state.searchBy}`}}
+        SelectProps={{renderValue: () => `Search by: ${this.state.searchBy}`}}
       >
         {this.props.searchByOptions && this.props.searchByOptions.map((option) => (
             <MenuItem key={option} value={option}>
