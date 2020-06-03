@@ -79,12 +79,12 @@ var MTableToolbar = /*#__PURE__*/function (_React$Component) {
         searchText: searchText
       }, _this.props.onSearchChanged(searchText));
     });
-    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onSearchByChange", function (searchBy, searchText) {
-      _this.props.dataManager.changeSearchBy(searchBy, searchText);
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onSearchByChange", function (searchBy) {
+      _this.props.dataManager.changeSearchBy(searchBy);
 
       _this.setState({
         searchBy: searchBy
-      }, _this.onSearchChange(searchText));
+      });
     });
     (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "defaultExportCsv", function () {
       var columns = _this.props.columns.filter(function (columnDef) {
@@ -183,7 +183,7 @@ var MTableToolbar = /*#__PURE__*/function (_React$Component) {
         value: this.state.searchBy,
         label: !this.state.searchBy ? 'Search by' : null,
         onChange: function onChange(event) {
-          return _this3.onSearchByChange(event.target.value, _this3.state.searchText);
+          return _this3.onSearchByChange(event.target.value);
         },
         className: classes.searchBy,
         InputLabelProps: {

@@ -33,9 +33,9 @@ export class MTableToolbar extends React.Component {
     this.setState({ searchText }, this.props.onSearchChanged(searchText));
   }
 
-  onSearchByChange = (searchBy, searchText) => {
-    this.props.dataManager.changeSearchBy(searchBy, searchText);
-    this.setState({ searchBy }, this.onSearchChange(searchText));
+  onSearchByChange = (searchBy) => {
+    this.props.dataManager.changeSearchBy(searchBy);
+    this.setState({ searchBy });
   }
 
   defaultExportCsv = () => {
@@ -125,7 +125,7 @@ export class MTableToolbar extends React.Component {
         variant="filled"
         value={this.state.searchBy}
         label={!this.state.searchBy ? 'Search by' : null}
-        onChange={event => this.onSearchByChange(event.target.value, this.state.searchText)}
+        onChange={event => this.onSearchByChange(event.target.value)}
         className={classes.searchBy}
         InputLabelProps={{ shrink: false }}
         SelectProps={{renderValue: () => `Search by: ${this.state.searchBy}`}}
